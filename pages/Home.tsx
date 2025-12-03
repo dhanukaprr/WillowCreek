@@ -41,13 +41,44 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {[
-              { title: "Homemade Breakfast", icon: "🍳" },
-              { title: "Nature Surroundings", icon: "🌲" },
-              { title: "High-Speed Wi-Fi", icon: "📶" },
-              { title: "Personalized Service", icon: "🛎️" },
+              { 
+                title: "Homemade Breakfast", 
+                icon: (
+                  <svg className="w-10 h-10 mx-auto text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414" />
+                    {/* Fallback to simple coffee cup if the above is too abstract, but sticking to standard outline style */}
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8h1a4 4 0 110 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 1v3M10 1v3M14 1v3" />
+                  </svg>
+                )
+              },
+              { 
+                title: "Nature Surroundings", 
+                icon: (
+                  <svg className="w-10 h-10 mx-auto text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                )
+              },
+              { 
+                title: "High-Speed Wi-Fi", 
+                icon: (
+                  <svg className="w-10 h-10 mx-auto text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                  </svg>
+                )
+              },
+              { 
+                title: "Personalized Service", 
+                icon: (
+                  <svg className="w-10 h-10 mx-auto text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                  </svg>
+                )
+              },
             ].map((feature, idx) => (
               <div key={idx} className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="mb-4 flex justify-center">{feature.icon}</div>
                 <h3 className="font-serif text-lg font-bold text-brand-darkGreen">{feature.title}</h3>
               </div>
             ))}
